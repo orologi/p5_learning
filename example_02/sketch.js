@@ -39,3 +39,5 @@ function draw() {
         text('D', 413, letterDposY);
     }
 }
+
+console.log('%c Myfriends', 'color:orange; font-weight: bold;')
