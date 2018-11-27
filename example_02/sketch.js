@@ -24,7 +24,11 @@ function setup() {
 }
 
 function draw() {
-    background(0)
+    background(0);
+    buttonInteraction();
+}
+
+function buttonInteraction() {
     if (mouseX > boxPosition.x && mouseX < boxPosition.x + boxSize.sLength && mouseY < boxPosition.y + boxSize.height && mouseY > boxPosition.y) {
         bigSquare = rect(150, boxPosition.y, boxSize.bLength, boxSize.height, 30)
         fill(0, 0, 0);
