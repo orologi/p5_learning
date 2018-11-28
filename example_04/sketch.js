@@ -39,6 +39,4 @@ function sevenSegment(val) {
     rect(40, 40, 20, 100, 10); // F
     fill(getColor(val, 0));
     rect(60, 140, 80, 20, 10); // G
-
-    pop();
 }
