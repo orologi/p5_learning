@@ -54,7 +54,20 @@
 						ul.appendChild(li);
 						input.value = "";
 
+						var dBtn = document.createElement("button");
+						dBtn.appendChild(document.createTextNode("X"));
+						li.appendChild(dBtn);
+						dBtn.addEventListener("click", deleteToDoItem);
+
+						function deleteToDoItem () {
+							li.classList.add("delete")
+						}
+
+
 				}
+
+			
+
 				</script>
 
 
