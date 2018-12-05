@@ -1,15 +1,31 @@
-class ToDoClass{
-    constructor(){
-        this.tasks = [
-        { task: 'Grocery', isComplete: false},
-        {task: ' Doctort', isComplete : true},
-        {task: 'Gift', isComplete: false},
+class ToDoClass {
+    constructor() {
+        this.tasks = [{
+                task: 'Grocery',
+                isComplete: false
+            }, {
+                task: ' Doctort',
+                isComplete: true
+            }, {
+                task: 'Gift',
+                isComplete: false
+            },
 
         ];
         this.loadTasks();
 
-    generateTaskHtml(task, index){
-        return `
+        toggleTaskStatus(index) {
+            this.task[index].isComplete = !$this.tasks[index].isComplete;
+            this.loadTasks();
+        }
+        deleteTask(event, taskIndex) {
+            event.preventDefault();
+            this.tasks.splite(taskIndex, 1);
+            this.loadTasks();
+        }
+
+        generateTaskHtml(task, index) {
+            return `
         <li class="li-group-item checkbox">
             <div class="row">
             <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
@@ -28,13 +44,12 @@ class ToDoClass{
             </div>
             </li>
             `;
+        }
     }
-
-    }
-    loadTasks(){
+    loadTasks() {
         let taskHtml = this.tasks.reduce((html, tasks, index) => html +=
             this.generateTaskHtml(task.index), '');
-            document.getElementById('taskList').innerHTML = taskHtml;
+        document.getElementById('taskList').innerHTML = taskHtml;
 
     }
 }
